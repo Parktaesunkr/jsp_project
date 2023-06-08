@@ -3,35 +3,36 @@
     import="java.util.*,sec02.ex01.*"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <%
 	request.setCharacterEncoding("utf-8");
 %>
 <!DOCTYPE html>
 <html>
 <head>
-<c:choose>
-	<c:when test='${msg=="addMember" }'>
-		<script>
-			window.onload = function() {
-				alert("회원을 등록했습니다.")
-			}
-		</script>
-	</c:when>
-	<c:when test='${msg=="modified" }'>
-		<script>
-			window.onload = function() {
-				alert("회원 정보를 수정했습니다.")
-			}
-		</script>
-	</c:when>
-	<c:when test='${msg=="deleted" }'>
-		<script>
-			window.onload = function() {
-				alert("회원 정보를 삭제했습니다.")
-			}
-		</script>
-	</c:when>
-</c:choose>
+	<c:choose>
+		<c:when test='${msg=="addMember" }'>
+			<script>
+				window.onload = function() {
+					alert("회원을 등록했습니다.")
+				}
+			</script>
+		</c:when>
+		<c:when test='${msg=="modified" }'>
+			<script>
+				window.onload = function() {
+					alert("회원 정보를 수정했습니다.")
+				}
+			</script>
+		</c:when>
+		<c:when test='${msg=="deleted" }'>
+			<script>
+				window.onload = function() {
+					alert("회원 정보를 삭제했습니다.")
+				}
+			</script>
+		</c:when>
+	</c:choose>
 <meta charset="UTF-8">
 <title>회원 정보 출력창</title>
 <style>
@@ -81,7 +82,7 @@
             </c:when>
         </c:choose>
     </table>
-	<a href="${contextPath}/member/MemberForm.do">
+	<a href="${contextPath}/member/memberForm.do">
    		<p class="cls2">회원 가입하기</p>
   	</a>
 </body>

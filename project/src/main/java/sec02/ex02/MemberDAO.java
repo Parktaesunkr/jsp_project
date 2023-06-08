@@ -101,9 +101,9 @@ public class MemberDAO {
 	}
 	public void modMember(MemberVO memberVO) {
 		String id = memberVO.getId();
-		String pwd =memberVO.getPwd();
-		String name =memberVO.getName();
-		String email =memberVO.getEmail();
+		String pwd = memberVO.getPwd();
+		String name = memberVO.getName();
+		String email = memberVO.getEmail();
 		try {
 			conn = dataFactory.getConnection();
 			String query = "update t_member set pwd=?,name=?,email=? where id=?";
