@@ -17,9 +17,6 @@ public class ArticleVO {
 	public ArticleVO() {
 	
 	}
-
-
-
 	public ArticleVO(int level, int articleNO, int parentNO, String title, String content, String imageFileName,
 			String id) {
 		this.level = level;
