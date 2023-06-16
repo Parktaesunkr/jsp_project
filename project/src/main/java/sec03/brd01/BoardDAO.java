@@ -31,7 +31,7 @@ public class BoardDAO {
 		try {
 		conn = dataFactory.getConnection();
 		String query = "SELECT LEVEL, articleNO	, parentNO, title, content, id, writedate"
-				+ " FROM t_board "
+				+ " FROM t_board"
 				+ " START WITH parentNO=0"
 				+ " connect by PRIOR articleNO=parentNO"
 				+ " ORDER SIBLINGS BY articleNO desc";
@@ -64,5 +64,5 @@ public class BoardDAO {
 		}
 		return articlesList;
 	}
-
+	
 }

@@ -14,5 +14,5 @@ public class BoardService {
 		List<ArticleVO> articlesList = boardDAO.selectAllAritcles();
 		return articlesList;
 	}
-
+	
 }
