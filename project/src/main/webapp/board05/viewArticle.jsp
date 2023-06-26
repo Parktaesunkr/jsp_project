@@ -47,6 +47,18 @@
 			reader.readAsDataURL(input.files[0]);
 		}
 	}
+  	function fn_remove_article(url,articleNO) {
+		var form = document.createElement("form");
+		form.setAttribute("method","post");
+		form.setAttribute("action",url);
+		var articleNOInput = document.createElement("input");
+		articleNOInput.setAttribute("type","hidden");
+		articleNOInput.setAttribute("name","articleNO");
+		articleNOInput.setAttribute("value",articleNO);
+		form.appendChild(articleNOInput);
+		document.body.appendChild(form);
+		form.submit();
+	}
    </script>
 </head>
 <body>
@@ -120,9 +132,8 @@
     
   <tr  id="tr_btn">
    <td colspan=2 align="center">
-    
 	  <input type=button value="수정하기" onClick="fn_enable(this.form)">
-	  <input type=button value="삭제하기" onClick="fn_remove_article('${contextPath}/board/removeArticle.do', ${article.articleNO})">
+	  <input type=button value="삭제하기" onClick="fn_remove_article('${contextPath}/board/removeArticle.do',${article.articleNO})">
 	  <input type=button value="리스트로 돌아가기"  onClick="backToList(this.form)">
 	  <input type=button value="답글쓰기"  onClick="fn_reply_form('${contextPath}/board/replyForm.do', ${article.articleNO})">
    </td>
