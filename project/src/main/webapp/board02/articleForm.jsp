@@ -5,7 +5,6 @@
 <%
 	request.setCharacterEncoding("utf-8");
 %>
-<c:set var="contextPath"  value="${pageContext.request.contextPath}"  /> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +16,7 @@
 		if(input.files && input.files[0]){
 			var reader = new FileReader();
 			reader.onload = function(e) {
-				$('#preview').attr('src', e.target.result);
+				$('preview').attr('src', e.target.result);
 			}
 			reader.readAsDataURL(input.files[0]);
 		}

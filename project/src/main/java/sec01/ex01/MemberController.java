@@ -39,7 +39,7 @@ public class MemberController extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		List<MemberVO> membersList = memberDAO.listMembers();
 		request.setAttribute("membersList", membersList);
-		RequestDispatcher dispatch = request.getRequestDispatcher("/test01/listMembers.jsp");
+		RequestDispatcher dispatch = request.getRequestDispatcher("/test03/listMembers.jsp");
 		dispatch.forward(request, response);
 	}
 
